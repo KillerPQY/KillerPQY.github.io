@@ -65,11 +65,11 @@ kramdown:
 # Netease settings
 netease_comment: false
 
-# gitment settings
-gitment_username: KillerPQY
-gitment_repo: KillerPQY.github.io
-gitment_client_id: Ov23liG1G1b8Z9jb4iyg
-gitment_client_secret: b915abd81a0ba27ef1fd305c9f5afa808e688a5d
+# gitalk settings
+gitalk_username: KillerPQY
+gitalk_repo: KillerPQY.github.io
+gitalk_client_id: Ov23liG1G1b8Z9jb4iyg
+gitalk_client_secret: b915abd81a0ba27ef1fd305c9f5afa808e688a5d
 
 # Analytics settings
 # Baidu Analytics

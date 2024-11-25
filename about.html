@@ -48,24 +48,21 @@ multilingual: true
 {% endif %}
 
 
-{% if site.gitment_username %}
-<div class="gitment-comment">
-    <div id="gitment-container">
+{% if site.gitalk_username %}
+<div id="gitalk-container"></div>
 
-    </div>
-</div>
-
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
-    var gitment = new Gitment({
-        owner: '{{site.gitment_username}}',
-        repo: '{{site.gitment_repo}}',
-        oauth: {
-            client_id: '{{site.gitment_client_id}}',
-            client_secret: '{{site.gitment_client_secret}}',
-        },
+    var gitalk = new Gitalk({
+        clientID: '{{site.gitalk_client_id}}',
+        clientSecret: '{{site.gitalk_client_secret}}',
+        repo: '{{site.gitalk_repo}}',
+        owner: '{{site.gitalk_username}}',
+        admin: ['{{site.gitalk_username}}'],
+        id: window.location.href,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
     })
-    gitment.render('gitment-container')
+    gitalk.render('gitalk-container')
 </script>
 {% endif %}
