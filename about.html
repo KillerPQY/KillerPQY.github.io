@@ -46,3 +46,26 @@ multilingual: true
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
+
+
+{% if site.gitment_username %}
+<div class="gitment-comment">
+    <div id="gitment-container">
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        owner: '{{site.gitment_username}}',
+        repo: '{{site.gitment_repo}}',
+        oauth: {
+            client_id: '{{site.gitment_client_id}}',
+            client_secret: '{{site.gitment_client_secret}}',
+        },
+    })
+    gitment.render('gitment-container')
+</script>
+{% endif %}

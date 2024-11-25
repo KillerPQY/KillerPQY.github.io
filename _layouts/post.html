@@ -56,6 +56,16 @@ layout: default
                 <!-- disqus 评论框 end -->
                 {% endif %}
 
+                <!-- gitment 评论框 start -->
+                {% if site.gitment_username %}
+                <div class="gitment-comment">
+                    <div id="gitment-container">
+
+                    </div>
+                </div>
+                {% endif %}
+                <!-- gitment 评论框 end -->
+
                 {% if site.netease_comment %}
                 <!-- 网易云跟帖 评论框 start -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
@@ -133,6 +143,25 @@ layout: default
     })();
 </script>
 <!-- disqus 公共JS代码 end -->
+{% endif %}
+
+
+{% if site.gitment_username %}
+<!-- gitment 公共代码 start (一个网页只需插入一次) -->
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        owner: '{{site.gitment_username}}',
+        repo: '{{site.gitment_repo}}',
+        oauth: {
+            client_id: '{{site.gitment_client_id}}',
+            client_secret: '{{site.gitment_client_secret}}',
+        },
+    })
+    gitment.render('gitment-container')
+</script>
+<!-- gitment 公共代码 end -->
 {% endif %}
 
 
