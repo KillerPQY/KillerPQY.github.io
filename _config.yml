@@ -70,7 +70,7 @@ gitalk_username: KillerPQY
 gitalk_repo: KillerPQY.github.io
 gitalk_client_id: Ov23liG1G1b8Z9jb4iyg
 gitalk_client_secret: b915abd81a0ba27ef1fd305c9f5afa808e688a5d
-gitalk_proxy: https://cors-server-dakarpeng.vercel.app/github_access_token
+gitalk_proxy: https://cors-server-killerpqy.vercel.app/github_access_token
 
 # Analytics settings
 # Baidu Analytics
